@@ -1,28 +1,43 @@
 # KucoinRuby
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/kucoin_ruby`. To experiment with that code, run `bin/console` for an interactive prompt.
+<h1 align="center">KuCoin API Client</h1>
 
-TODO: Delete this and the text above, and describe your gem
+<p align="center">
+  A Ruby client for the [KuCoin](https://www.kucoin.com/) API.
+</p>
 
-## Installation
+## Overview
 
-Add this line to your application's Gemfile:
+This Ruby Gem attempts to add a layer to communicate with [KuCoin API documentation](http://docs.kucoinapidocs.apiary.io/) making easy connect with it. 31 endpoits are implemented but some of them
+are not working correctly yet
 
-```ruby
-gem 'kucoin_ruby'
-```
+## Getting started
 
-And then execute:
+### Installation
 
-    $ bundle
+    Add gem to your Gemfile
+    `gem 'kucoin_ruby'`
 
-Or install it yourself as:
+    Define your KuCoin API credentials as ENV vars of your project:
 
-    $ gem install kucoin_ruby
+    ```
+    KUCOIN_KEY=YOUR_KEY
+    KUCOIN_SECRET=YOUR_SECRET
+    ```
 
-## Usage
+### Usage
 
-TODO: Write usage instructions here
+    All Kucoin methods are class methods, just call it with expected parameters
+
+    ```ruby
+      Kucoin::Currency.exanges
+    ```
+
+## Donations
+
+ETH **0x033c3f91a009f55236cf1b74811d118870bc6ebe**
+BTC **1AiVzBv3B1813wmfAJzFhHHLur2FzJaDyM**
+LTC **LPz1pegDmdaSDWBaxBMEqV9Qn4vw2hLSN6**
 
 ## Development
 
