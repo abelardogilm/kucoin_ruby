@@ -1,5 +1,3 @@
-# KucoinRuby
-
 <h1 align="center">KuCoin API Client</h1>
 
 <p align="center">
@@ -15,28 +13,32 @@ are not working correctly yet
 
 ### Installation
 
-    Add gem to your Gemfile
-    `gem 'kucoin_ruby'`
+Add gem to your Gemfile
+`gem 'kucoin_ruby'`
 
-    Define your KuCoin API credentials as ENV vars of your project:
+Define your KuCoin API credentials as ENV vars of your project:
 
-    ```
-    KUCOIN_KEY=YOUR_KEY
-    KUCOIN_SECRET=YOUR_SECRET
-    ```
+```
+KUCOIN_KEY=YOUR_KEY
+KUCOIN_SECRET=YOUR_SECRET
+```
 
 ### Usage
 
-    All Kucoin methods are class methods, just call it with expected parameters
+All Kucoin methods are class methods, just call it with expected parameters
 
-    ```ruby
-      Kucoin::Currency.exanges
-    ```
+```ruby
+  Kucoin::Currency.exanges
+```
+
+WIP
 
 ## Donations
 
 ETH **0x033c3f91a009f55236cf1b74811d118870bc6ebe**
+
 BTC **1AiVzBv3B1813wmfAJzFhHHLur2FzJaDyM**
+
 LTC **LPz1pegDmdaSDWBaxBMEqV9Qn4vw2hLSN6**
 
 ## Development
