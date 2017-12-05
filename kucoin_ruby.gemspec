@@ -10,14 +10,14 @@ Gem::Specification.new do |spec|
   spec.email         = ["abelardogilm@gmail.com"]
 
   spec.summary       = %q{KuCoin API Gem}
-  spec.description   = %q{KuCoin API Gem}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.description   = %q{KuCoin Ruby API Gem}
+  spec.homepage      = "https://github.com/abelardogilm/kucoin_ruby"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.
   if spec.respond_to?(:metadata)
-    spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
+    spec.metadata["allowed_push_host"] = "https://github.com/abelardogilm/kucoin_ruby"
   else
     raise "RubyGems 2.0 or newer is required to protect against " \
       "public gem pushes."
