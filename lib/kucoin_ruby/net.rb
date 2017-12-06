@@ -14,11 +14,11 @@ module KucoinRuby
 
     def self.headers(nonce, signature)
       {
-        'Content-Type': 'application/json',
-        'KC-API-KEY': key,
-        'KC-API-NONCE': nonce,
-        'KC-API-SIGNATURE': signature,
-        "Accept-Language": 'en_EN'
+        'Content-Type' => 'application/json',
+        'KC-API-KEY' => key,
+        'KC-API-NONCE' => nonce,
+        'KC-API-SIGNATURE' => signature,
+        "Accept-Language" => 'en_EN'
       }
     end
 

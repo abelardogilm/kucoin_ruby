@@ -1,3 +1,11 @@
+## 0.1.5
+
+### Changed
+
+- Add Simplecov gem
+- Setup Rspec
+- Add some Rspec tests
+
 ## 0.1.4
 
 ### Changed
