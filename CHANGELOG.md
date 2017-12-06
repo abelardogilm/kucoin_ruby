@@ -1,3 +1,9 @@
+## 0.1.7
+
+### Changed
+
+- Fix error parsing response if not 200 code recieved
+
 ## 0.1.6
 
 ### Changed
