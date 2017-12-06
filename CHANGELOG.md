@@ -1,3 +1,10 @@
+## 0.1.6
+
+### Changed
+
+- Make Trading methods as class methods
+- Make Market methods as class methods
+
 ## 0.1.5
 
 ### Changed
