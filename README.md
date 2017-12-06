@@ -1,7 +1,7 @@
 <h1 align="center">KuCoin API Client</h1>
 
 <p align="center">
-  A Ruby client for the [KuCoin](https://www.kucoin.com/) API.
+  A Ruby client for the [KuCoin](https://www.kucoin.com/#/?r=E57fFl) API.
 </p>
 
 ## Overview
