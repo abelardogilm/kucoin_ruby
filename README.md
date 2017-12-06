@@ -16,22 +16,89 @@ are not working correctly yet
 Add gem to your Gemfile
 `gem 'kucoin_ruby'`
 
-Define your KuCoin API credentials as ENV vars of your project:
+Some of API endpoints are open, like exchange or market information.
+No credentials are required to use them, but if you want to use private endpoints
+you will need to define your KuCoin **API credentials** as ENV vars of your project:
 
 ```
 KUCOIN_KEY=YOUR_KEY
 KUCOIN_SECRET=YOUR_SECRET
 ```
 
-### Usage
+## Usage
 
 All Kucoin methods are class methods, just call it with expected parameters
 
+### Currency
+
 ```ruby
-  Kucoin::Currency.exanges
+  KucoinRuby::Currency.exanges
 ```
 
-WIP
+### Language
+
+```ruby
+  KucoinRuby::Language.lang_list
+  KucoinRuby::Language.change_lang 'en_US' # Not working as expected
+```
+
+### User
+
+```ruby
+  KucoinRuby::User.user_info
+```
+
+### Inviting
+
+```ruby
+  KucoinRuby::Invinting.invitation_count
+  KucoinRuby::Invinting.promotion_reward
+  KucoinRuby::Invinting.promotion_summary
+```
+
+### Operations
+
+COIN: "BTC", "ETH", "NEO"...
+
+```ruby
+  KucoinRuby::Operations.get_coin_address(<COIN>)
+  KucoinRuby::Operations.create_withdrawal(<COIN>, <AMOUNT>, <ADDRESS>) # Not working as expected
+  KucoinRuby::Operations.cancel_withdrawal(<COIN>, <OP_ID>) # Not working as expected
+  KucoinRuby::Operations.wallet_records(<COIN>, <TYPE>, <STATUS>, <LIMIT>, <PAGE>) # Not working as expected
+  KucoinRuby::Operations.coin_balance(<COIN>)
+  KucoinRuby::Operations.balance
+```
+
+### Trading
+
+Symbol: "ETH-BTC", "BTC-ETH", "GVT-BTC"...
+
+```ruby
+  KucoinRuby::Trading.create_order(<SYMBOL>, <TYPE>, <PRICE>, <AMOUNT>) # Not tested yet
+  KucoinRuby::Trading.active_orders(<SYMBOL>)
+  KucoinRuby::Trading.cancel_order(<SYMBOL>, <ORDER_ID>, <TYPE>) # Not tested yet
+  KucoinRuby::Trading.dealt_orders(<SYMBOL>, <TYPE>, <LIMIT>, <PAGE>, <SINCE>, <BEFORE>)
+  KucoinRuby::Trading.symbol_dealt_order(<SYMBOL>, <TYPE>, <LIMIT>, <PAGE>)
+```
+
+### Market
+
+```ruby
+  KucoinRuby::Market.tick(<SYMBOL>)
+  KucoinRuby::Market.orders(<SYMBOL>)
+  KucoinRuby::Market.buy_orders(<SYMBOL>, <GROUP>, <LIMIT>)
+  KucoinRuby::Market.sell_orders(<SYMBOL>, <GROUP>, <LIMIT>)
+  KucoinRuby::Market.recent_deal_orders(<SYMBOL>, <LIMIT>, <SINCE>)
+  KucoinRuby::Market.trading_symbols
+  KucoinRuby::Market.trending_symbols
+  KucoinRuby::Market.kline_data(<SYMBOL>, <TYPE>, <FROM>, <TO>, <LIMIT>)
+  KucoinRuby::Market.kline_config
+  KucoinRuby::Market.chart_symbol(<SYMBOL>)
+  KucoinRuby::Market.history_kline_data(<SYMBOL>, <RESOLUTION>, <FROM>, <TO>)
+  KucoinRuby::Market.coin_info(<COIN>)
+  KucoinRuby::Market.coins
+
+```
 
 ## Donations
 
