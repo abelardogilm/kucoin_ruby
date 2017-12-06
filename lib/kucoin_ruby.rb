@@ -9,8 +9,12 @@ require "kucoin_ruby/operations"
 require "kucoin_ruby/trading"
 require "kucoin_ruby/market"
 
+require "kucoin_ruby/exceptions/base"
+require "kucoin_ruby/exceptions/response_error"
+
 require "openssl"
 require "httparty"
+require "addressable/uri"
 
 module KucoinRuby
 

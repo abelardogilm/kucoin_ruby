@@ -1,3 +1,11 @@
+## 0.1.4
+
+### Changed
+
+- Fix error with to_param ruby compatibility
+- Add Exceptions
+- Handel Kucoin API response
+
 ## 0.1.3
 
 ### Changed

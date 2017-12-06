@@ -5,11 +5,11 @@ module KucoinRuby
     API_HOST   = 'https://api.kucoin.com'
 
     def self.key
-      ENV['KUCOIN_KEY']
+      ENV['KUCOIN_KEY'] || 'fake_key'
     end
 
     def self.secret
-      ENV['KUCOIN_SECRET']
+      ENV['KUCOIN_SECRET'] || 'fake_secret'
     end
 
     def self.headers(nonce, signature)
@@ -24,26 +24,35 @@ module KucoinRuby
 
     def self.get(endpoint)
       uri = "#{API_HOST}#{endpoint}"
-      HTTParty.get(uri)
+      handle_response(HTTParty.get(uri))
     end
 
     def self.signed_get(endpoint, query_string = nil)
       nonce, signature = KucoinRuby::Util.sign_message(endpoint, query_string)
       uri = "#{API_HOST}#{endpoint}?#{query_string}"
-      HTTParty.get(
+      response = HTTParty.get(
         uri,
         headers: headers(nonce, signature)
       )
+      handle_response(response)
     end
 
     def self.signed_post(endpoint, payload = nil)
       nonce, signature = KucoinRuby::Util.sign_message(endpoint)
       uri = "#{API_HOST}#{endpoint}"
-      HTTParty.post(
+      response = HTTParty.post(
         uri,
         headers: headers(nonce, signature),
         body: payload
       )
+      handle_response(response)
+    end
+
+    def self.handle_response(response)
+      if response.code != 200
+        raise KucoinRuby::Exceptions::ResponseError.new(response)
+      end
+      JSON.parse(response.body)
     end
   end
 end
