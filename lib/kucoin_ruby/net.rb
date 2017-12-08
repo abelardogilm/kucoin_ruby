@@ -2,7 +2,7 @@ require "kucoin_ruby/version"
 
 module KucoinRuby
   class Net
-    API_HOST   = 'https://api.kucoin.com'
+    API_HOST = 'https://api.kucoin.com'
 
     def self.key
       ENV['KUCOIN_KEY'] || 'fake_key'
@@ -29,6 +29,7 @@ module KucoinRuby
 
     def self.signed_get(endpoint, query_string = nil)
       nonce, signature = KucoinRuby::Util.sign_message(endpoint, query_string)
+      query_string = URI.encode_www_form(query_string)
       uri = "#{API_HOST}#{endpoint}?#{query_string}"
       response = HTTParty.get(
         uri,

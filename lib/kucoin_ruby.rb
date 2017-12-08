@@ -16,6 +16,8 @@ require "openssl"
 require "httparty"
 require "addressable/uri"
 
+require 'pry'
+
 module KucoinRuby
 
 end
