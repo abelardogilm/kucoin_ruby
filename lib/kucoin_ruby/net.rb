@@ -29,7 +29,7 @@ module KucoinRuby
 
     def self.signed_get(endpoint, query_string = nil)
       nonce, signature = KucoinRuby::Util.sign_message(endpoint, query_string)
-      query_string = URI.encode_www_form(query_string)
+      query_string = URI.encode_www_form(query_string) if query_string.is_a? Hash
       uri = "#{API_HOST}#{endpoint}?#{query_string}"
       response = HTTParty.get(
         uri,

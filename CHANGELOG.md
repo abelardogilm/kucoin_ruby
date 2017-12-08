@@ -1,3 +1,11 @@
+## 0.1.10
+
+### Changed
+
+- Fix error with query_string in get requests
+- Fix cancel operation on trading module
+- Make dealt operation param methods optional
+
 ## 0.1.9
 
 ### Changed
