@@ -1,3 +1,9 @@
+## 0.1.8
+
+### Changed
+
+- Fix error with query_string in get requests
+
 ## 0.1.7
 
 ### Changed
