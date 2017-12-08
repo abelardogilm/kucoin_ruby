@@ -1,3 +1,9 @@
+## 0.1.9
+
+### Changed
+
+- Remove require pry
+
 ## 0.1.8
 
 ### Changed
