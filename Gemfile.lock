@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    kucoin_ruby (0.1.9)
+    kucoin_ruby (0.1.10)
       addressable
       httparty
 
