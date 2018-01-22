@@ -39,8 +39,9 @@ module KucoinRuby
     end
 
     def self.signed_post(endpoint, payload = nil)
-      nonce, signature = KucoinRuby::Util.sign_message(endpoint)
-      uri = "#{API_HOST}#{endpoint}"
+      nonce, signature = KucoinRuby::Util.sign_message(endpoint, payload)
+      query_string = URI.encode_www_form(payload) if payload.is_a? Hash
+      uri = "#{API_HOST}#{endpoint}?#{query_string}"
       response = HTTParty.post(
         uri,
         headers: headers(nonce, signature),
