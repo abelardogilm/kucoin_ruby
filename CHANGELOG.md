@@ -1,3 +1,9 @@
+## 0.1.11
+
+### Changed
+
+- Fix error with query_string in post requests (thanks @mithrandir)
+
 ## 0.1.10
 
 ### Changed
