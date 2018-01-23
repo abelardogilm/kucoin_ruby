@@ -6,9 +6,9 @@ module KucoinRuby
       KucoinRuby::Net.signed_post(endpoint, payload)
     end
 
-    def self.active_orders(symbol = nil)
+    def self.active_orders(symbol, type = nil)
       endpoint = '/v1/order/active'
-      query_string = {symbol: symbol}
+      query_string = {symbol: symbol, type: type}
       KucoinRuby::Net.signed_get(endpoint, query_string)
     end
 
