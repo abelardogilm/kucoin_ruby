@@ -21,7 +21,7 @@ module KucoinRuby
     end
 
     def self.recent_deal_orders(symbol, limit, since)
-      endpoint = "/v1/open/deal-orders?symbol=#{symbol}&synce=#{synce}&limit=#{limit}"
+      endpoint = "/v1/open/deal-orders?symbol=#{symbol}&synce=#{since}&limit=#{limit}"
       KucoinRuby::Net.get(endpoint)
     end
 
