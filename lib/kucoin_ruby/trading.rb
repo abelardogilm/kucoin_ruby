@@ -27,13 +27,13 @@ module KucoinRuby
         since: since,
         symbol: symbol,
         type: type
-      }.keep_if{|_,y| y}
+      }
       KucoinRuby::Net.signed_get(endpoint, query_string)
     end
 
     def self.symbol_dealt_order(symbol, type=nil, limit=nil, page=nil )
       endpoint = '/v1/deal-orders'
-      query_string = {limit: limit, page: page, symbol: symbol, type: type}.keep_if{|_,y| y}
+      query_string = {limit: limit, page: page, symbol: symbol, type: type}
       KucoinRuby::Net.signed_get(endpoint, query_string)
     end
   end
