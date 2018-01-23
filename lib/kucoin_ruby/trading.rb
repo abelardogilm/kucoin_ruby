@@ -1,8 +1,8 @@
 module KucoinRuby
   module Trading
     def self.create_order(symbol, type, price, amount)
-      endpoint = '/v1/order'
-      payload = {symbol: symbol, type: type, price: price, amount: amount}
+      endpoint = "/v1/#{symbol}/order"
+      payload = { amount: amount, price: price, type: type }
       KucoinRuby::Net.signed_post(endpoint, payload)
     end
 
@@ -13,8 +13,8 @@ module KucoinRuby
     end
 
     def self.cancel_order(symbol, order_id, type)
-      endpoint = '/v1/cancel-order'
-      payload = {symbol: symbol, type: type, orderOid: order_id}
+      endpoint = "/v1/#{symbol}/cancel-order"
+      payload = {orderOid: order_id, type: type}
       KucoinRuby::Net.signed_post(endpoint, payload)
     end
 
