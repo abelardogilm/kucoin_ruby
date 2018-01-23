@@ -36,5 +36,11 @@ module KucoinRuby
       query_string = {limit: limit, page: page, symbol: symbol, type: type}
       KucoinRuby::Net.signed_get(endpoint, query_string)
     end
+
+    def self.order_detail(symbol, type, order_id, limit=nil, page=nil )
+      endpoint = '/v1/order/detail'
+      query_string = {limit: limit, orderOid: order_id, page: page, symbol: symbol, type: type}
+      KucoinRuby::Net.signed_get(endpoint, query_string)
+    end
   end
 end
