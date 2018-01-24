@@ -1,3 +1,13 @@
+## 0.1.13
+
+### Changed
+
+- Fix Active_orders endpoint
+- Fix Recent_deal_orders
+- Refactor get_signed clean payload
+- Fix Create_order endpoint
+- Add Order_detail method on Trading class
+
 ## 0.1.11
 
 ### Changed
