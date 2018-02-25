@@ -28,7 +28,7 @@ module KucoinRuby
     end
 
     def self.signed_get(endpoint, query_string = nil)
-      query_string = query_string&.keep_if{|_,y| y}
+      query_string = query_string.keep_if{|_,y| y}
       nonce, signature = KucoinRuby::Util.sign_message(endpoint, query_string)
       query_string = URI.encode_www_form(query_string) if query_string.is_a? Hash
       uri = "#{API_HOST}#{endpoint}?#{query_string}"
